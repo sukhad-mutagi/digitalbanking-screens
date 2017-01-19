@@ -1,0 +1,112 @@
+<div class="container">
+	<div class="row">
+		<form class="register-box">
+			<div class="col-xs-12 register-menu-style">
+				<ul class="nav nav-tabs nav-justified">
+				<li class="active"><a href="#acc_info"></a><p><span class="glyphicon glyphicon-plus-sign"></span>  Enter<br>Account Information</p></li>
+				<li class="active"><a href="#auth_info"></a><p><span class="glyphicon glyphicons-shield"></span> Authenticate<br>Account Information</p></li>
+				<li class="active"><a href="#userId"></a><p><span class="glyphicon glyphicon-user"></span> Choose<br>User ID</p></li>
+				<li class="active"><a href="#ipin"></a><p><span class="glyphicon glyphicon-briefcase"></span> Choose<br>IPIN</p></li>
+				<li class="active"><a href="#/login"></a><p><span class="glyphicon glyphicon-log-in"></span> Login to<br>Digitalbank Online</p></li>
+			</ul>
+			
+			<div class="tab-content">
+			<!-- first tab form -->
+				<div class="tab-pane active tab-style" id="acc_info" ng-show="acc_info">
+					<div class="form-group">
+						<label class="control-label"> Account Information</label>
+						<div class="dropdown">
+						<select class="btn btn-default dropdown-toggle" ng-model="accountInfo" ng-change="showCredit()">
+							<option value="">Select your Account type</option>
+							<option value="credit">Credit Card</option>
+							<option value="banking">Banking/Suvidha</option>
+							<option value="PL">Personal Loan</option>
+							<option value="accountRep">Account Representatives</option>
+							<option value="mortgages">Mortgages</option>
+						</select>
+						</div>
+						<!-- form with in the first form -->
+						<div class=" col-xs-6 form-horizontal" style="padding:20px;" ng-show="credit">
+							<div class="form-group">
+									<label>Enter your 16 digit Credit Card Number:</label>
+									<div class="form-inline">
+										<div class="col-xs-3 form-group">
+											<input type="text" class="text-box-size" maxlength="4">
+										</div>
+										<div class="col-xs-3 form-group">
+											<input type="text" class="text-box-size" maxlength="4">
+										</div>
+										<div class="col-xs-3 form-group">
+											<input type="text" class="text-box-size" maxlength="4">
+										</div>
+										<div class="col-xs-3 form-group">
+											<input type="text" class="text-box-size" maxlength="4">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label>CVV Number:</label>
+									<input type="text" maxlength="3">
+								</div>
+								<div class="form-group">
+									<label>Card Expiration Date:</label>
+									<input type="date" placeholder="dd/MM/yyyy">
+								</div>
+								<p style="color: #66a3ff">Personal Information</p><br>
+								<div class="form-group">
+									<label>Date of Birth:</label>
+									<input type="date" placeholder="dd/MM/yyyy">
+								</div>
+								<div class="form-group">
+									<label>Mailing address pincode</label>
+									<input type="text" maxlength="6">
+								</div>
+								<div class="form-group">
+								<div class="panel-box register-panel-box-size">
+									<div class="panel-body"><p>Terms and Conditions</p></div>
+								</div>
+								</div>
+								<div class="form-group">
+									<input type="checkbox"> I Agree to the terms and conditions
+								</div>
+								<div class="form-group">
+								<button class="btn btn-primary" ng-click="go(1)">Proceed <span class="glyphicon glyphicon-chevron-right"></span></button>
+								</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane active tab-style" id="auth_info" index="1" ng-show="auth_info">
+					<div class="form-group auth-info-style">
+						<label>Enter One Time Password (OTP)</label><br>
+						<input type=text maxlength="6"><br><br>
+						<div class="form-group">
+							<input type="button" class="btn btn-primary" value="Submit" ng-click="otpVerify()">
+							<input type="button" class="btn btn-primary" value="Resend" ng-click="resendOtp()">
+						</div>
+					</div>
+					<div class="form-group pull-right">
+						<button class="btn btn-primary" ng-click="go(2)">Proceed <span class="glyphicon glyphicon-chevron-right"></span></button>
+					</div>
+				</div>
+				<div class="tab-pane active tab-style" id="auth_info" index="2" ng-show="userId">
+					<div class="form-group">
+						userId Form
+					</div>
+					<div class="form-group pull-right">
+						<button class="btn btn-primary" ng-click="go(3)">Proceed <span class="glyphicon glyphicon-chevron-right"></span></button>
+					</div>
+				</div>
+				<div class="tab-pane active tab-style" id="auth_info" index="3" ng-show="ipin">
+					<div class="form-group">
+						Ipin form
+					</div>
+					<div class="form-group pull-right">
+						<a href="#/" class="btn btn-primary">Proceed to Login Page <span class="glyphicon glyphicon-chevron-right"></span></a>
+					</div>
+				</div>
+				
+			</div>	
+			</div>
+		</form>
+	</div>
+</div>
